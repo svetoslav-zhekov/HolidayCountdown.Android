@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="HolidayCountdown.MainMenuPage.MainMenu"
+             BackgroundColor="#232431"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+            
+        <!-- Main Grid -->
+        <Grid x:Name="MainGrid">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <!-- Video Background -->
+            <xct:MediaElement x:Name="BackgroundVideo" Source="ms-appx:///background_clock.mp4" Grid.RowSpan="4" 
+                              IsLooping="True" Volume="0" Speed="0.5" Aspect="AspectFill" ShowsPlaybackControls="False"/>
+
+            <!-- Background Opacity -->
+            <Rectangle Grid.RowSpan="4" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Black" Opacity="0.3"/>
+
+            <!-- GoBack/Logo -->
+            <Grid x:Name="Logo" VerticalOptions="Center">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <!-- GoBack Button -->
+                <Button x:Name="GoBack" Margin="5" BackgroundColor="White" HeightRequest="20" WidthRequest="20" 
+                        ImageSource="short_left.png" Clicked="GoBack_Clicked" CornerRadius="15"/>
+
+                <!-- Logo -->
+                <Image Source="logo.png" Scale="0.8" HorizontalOptions="Center" Grid.Column="1"/>
+                <Label Text="HolidayCountdown" FontAttributes="Bold" 
+                       HorizontalOptions="Start" VerticalOptions="Center" FontSize="30" TextColor="White" Grid.Column="2"/>
+            </Grid>
+
+            <!-- Nav Buttons -->
+            <Button x:Name="AddCountdown" VerticalOptions="End" HorizontalOptions="Center" BackgroundColor="White" 
+                    HeightRequest="80" WidthRequest="200" CornerRadius="15" Text="Add A Countdown" Grid.Row="1" Clicked="AddCountdown_Clicked"/>
+            <Button x:Name="ModifyCountdown" VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="White" 
+                    HeightRequest="80" WidthRequest="200" CornerRadius="15" Text="Modify A Countdown" Grid.Row="2" Clicked="ModifyCountdown_Clicked"/>
+            <Button x:Name="RemoveCountdown" VerticalOptions="Start" HorizontalOptions="Center" BackgroundColor="White" 
+                    HeightRequest="80" WidthRequest="200" CornerRadius="15" Text="Remove A Countdown" Grid.Row="3" Clicked="RemoveCountdown_Clicked"/>
+
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

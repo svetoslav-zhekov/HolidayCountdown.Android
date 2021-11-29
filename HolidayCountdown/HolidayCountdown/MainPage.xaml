@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="HolidayCountdown.MainPage"
+             BackgroundColor="#232431"
+             NavigationPage.HasNavigationBar="False">
+    
+    <!-- Main Grid -->
+    <Grid x:Name="MainGrid">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <!-- Video Background -->
+        <Image x:Name="BackgroundImage" IsAnimationPlaying="True" Aspect="AspectFill" Grid.RowSpan="2" IsVisible="false"/>
+        <xct:MediaElement x:Name="BackgroundVideo" Speed="0.5" IsLooping="True" ShowsPlaybackControls="False" Aspect="AspectFill"  Grid.RowSpan="2"/>
+
+        <!-- Background Opacity -->
+        <Rectangle Grid.RowSpan="2" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Black" Opacity="0.3"/>
+        
+        <!-- ButtonStacker -->
+        <ScrollView Orientation="Horizontal">
+            <StackLayout x:Name="ButtonStack" Background="#232431" Orientation="Horizontal" Spacing="0">
+                <Button x:Name="Menu" BackgroundColor="White" CornerRadius="10" Margin="6" ImageSource="hamburger.png" WidthRequest="50" Clicked="Menu_Clicked"/>
+            </StackLayout>
+        </ScrollView>
+        
+        <!-- Timer Grid -->
+        <Grid x:Name="TimerGrid" Grid.Row="1" VerticalOptions="CenterAndExpand"  HorizontalOptions="Center">
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <!-- Time Left -->
+            <Label x:Name="TimeLeft" VerticalOptions="Center"  HorizontalOptions="Center" 
+                   FontSize="55" TextColor="White" FontAttributes="Bold"/>
+        
+            <!-- Desc About Timer -->
+            <Label x:Name="TimerDate" Text="/0.0.0000/" TextColor="#ECECEC" FontSize="25" FontAttributes="Bold" Grid.Row="1" VerticalOptions="Start"  HorizontalOptions="Center"/>
+            <Label Text="Until" TextColor="#ECECEC" FontSize="25" FontAttributes="Bold" Grid.Row="2" VerticalOptions="Start" HorizontalOptions="Center"/>
+            <Label x:Name="TimerName" TextColor="#CECECE" Text="Holiday.Name.Here" FontSize="25" FontAttributes="Bold" Grid.Row="3" VerticalOptions="Start" HorizontalOptions="Center"/>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

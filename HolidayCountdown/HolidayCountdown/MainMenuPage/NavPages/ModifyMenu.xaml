@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="HolidayCountdown.MainMenuPage.NavPages.ModifyMenu"
+             BackgroundColor="#232431"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <!-- Main Grid -->
+        <Grid x:Name="MainGrid">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!-- Video Background -->
+            <xct:MediaElement Source="ms-appx:///background_clock.mp4" Grid.RowSpan="5" 
+                              IsLooping="True" Volume="0" Speed="0.5" Aspect="AspectFill" ShowsPlaybackControls="False"/>
+
+            <!-- Background Opacity -->
+            <Rectangle Grid.RowSpan="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Black" Opacity="0.3"/>
+
+            <!-- GoBack/TabName -->
+            <Grid x:Name="TabName" VerticalOptions="Center">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!-- GoBack Button -->
+                <Button x:Name="GoBack" Margin="5" BackgroundColor="White" HeightRequest="20" WidthRequest="20" 
+                        ImageSource="short_left.png" Clicked="GoBack_Clicked" CornerRadius="15"/>
+
+                <!-- Logo -->
+                <Label Text="Modify A Countdown" FontAttributes="Bold" 
+                       HorizontalOptions="Center" FontSize="30" TextColor="White" Grid.Column="1"/>
+            </Grid>
+
+            <!-- ComboBox Containing All The Countdown Timers -->
+            <Grid x:Name="CountdownCB" Grid.Row="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <Label Text="||Choose A Countdown||" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold"/>
+                <Picker x:Name="CountdownPick" BackgroundColor="White" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="250" 
+                    ItemDisplayBinding="{Binding Name}" Grid.Row="1"/>
+            </Grid>
+
+            <!-- ComboBox Containing All The Countdown Properties -->
+            <Grid x:Name="PropertyCB" Grid.Row="2">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label Text="||Choose A Property||" TextColor="White" VerticalOptions="End" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold"/>
+                <Picker x:Name="PropertyPick" Focused="PropertyPick_Focused" BackgroundColor="White" VerticalOptions="Start" HorizontalOptions="Center" WidthRequest="250" Grid.Row="1" 
+                        SelectedIndexChanged="PropertyPick_SelectedIndexChanged">
+                    <Picker.Items>
+                        <x:String>Change Name</x:String>
+                        <x:String>Change Date</x:String>
+                        <x:String>Change Image</x:String>
+                        <x:String>Change Video</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Grid>
+
+            <!-- Name -->
+            <Grid x:Name="NameCD" Grid.Row="3" IsVisible="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label Text="||Change Name||" TextColor="White" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" FontAttributes="Bold"/>
+                <Entry x:Name="NameCountDown" TextColor="Black" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="250"  Grid.Row="1"/>
+
+            </Grid>
+
+            <!-- Date -->
+            <Grid x:Name="DateCD" Grid.Row="3" IsVisible="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label Text="||Change Date||" TextColor="White" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" FontAttributes="Bold"/>
+                <DatePicker x:Name="DateCountDown" TextColor="Black" BackgroundColor="White" 
+                            HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="250"  Grid.Row="1"/>
+            </Grid>
+
+            <!-- Video/Image Background -->
+            <Button x:Name="PickImage" Text="Image Background" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False"
+                    Grid.Row="3" Margin="5" BackgroundColor="White" CornerRadius="15" Clicked="PickImage_Clicked"/>
+            <Button x:Name="PickVideo" Text="Video Background" HorizontalOptions="Center" VerticalOptions="Center" IsVisible="False"
+                    Grid.Row="3" Margin="5" BackgroundColor="White" CornerRadius="15" Clicked="PickVideo_Clicked"/>
+
+            <!-- Done Button -->
+            <Button x:Name="MODIFY" VerticalOptions="End" Text="Modify Countdown" Grid.Row="4" Margin="25" BackgroundColor="White" CornerRadius="15" Clicked="MODIFY_Clicked"/>
+    
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

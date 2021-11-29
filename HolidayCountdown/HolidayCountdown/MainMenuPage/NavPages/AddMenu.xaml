@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="HolidayCountdown.MainMenuPage.NavPages.AddMenu"
+             BackgroundColor="#232431"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+
+        <!-- Main Grid -->
+        <Grid x:Name="MainGrid">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!-- Video Background -->
+            <xct:MediaElement Source="ms-appx:///background_clock.mp4" Grid.RowSpan="5" 
+                              IsLooping="True" Volume="0" Speed="0.5" Aspect="AspectFill" ShowsPlaybackControls="False"/>
+
+            <!-- Background Opacity -->
+            <Rectangle Grid.RowSpan="5" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="Black" Opacity="0.3"/>
+
+            <!-- GoBack/TabName -->
+            <Grid x:Name="TabName" VerticalOptions="Center">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <!-- GoBack Button -->
+                <Button x:Name="GoBack" Margin="5" BackgroundColor="White" HeightRequest="20" WidthRequest="20" 
+                        ImageSource="short_left.png" Clicked="GoBack_Clicked" CornerRadius="15"/>
+
+                <!-- Desc -->              
+                <Label Text="Add A Countdown" FontAttributes="Bold" 
+                       HorizontalOptions="Center" FontSize="30" TextColor="White" Grid.Column="1"/>
+            </Grid>
+            
+            <!-- Name -->
+            <Grid x:Name="NameCD" Grid.Row="1" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label Text="||Name||" TextColor="White" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" FontAttributes="Bold"/>
+                <Entry x:Name="NameCountDown" TextColor="Black" BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="250"  Grid.Row="1"/>
+
+            </Grid>
+            
+            <!-- Date -->
+            <Grid x:Name="DateCD" Grid.Row="2" VerticalOptions="Center" >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Label Text="||Date||" TextColor="White" HorizontalOptions="Center" VerticalOptions="End" FontSize="25" FontAttributes="Bold"/>
+                <DatePicker x:Name="DateCountDown" TextColor="Black" BackgroundColor="White" 
+                            HorizontalOptions="Center" VerticalOptions="Start" WidthRequest="250"  Grid.Row="1"/>
+            </Grid>
+            
+            <!-- Video/Image Background -->
+            <Grid x:Name="BackgroundCD" Grid.Row="3" VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="||Background||" TextColor="White" Grid.ColumnSpan="2" HorizontalOptions="Center" FontSize="25" FontAttributes="Bold"/>
+                <Button x:Name="PickImage" Text="Image Background" Grid.Row="1" Margin="5" BackgroundColor="White" CornerRadius="15" Clicked="PickImage_Clicked"/>
+                <Button x:Name="PickVideo" Text="Video Background" Grid.Row="1" Grid.Column="1" BackgroundColor="White" CornerRadius="15" Margin="5" Clicked="PickVideo_Clicked"/>
+
+            </Grid>
+            
+            <!-- Done Button -->
+            <Button x:Name="ADD" VerticalOptions="End" Text="Add Countdown" Grid.Row="4" Margin="25" BackgroundColor="White" CornerRadius="15" Clicked="ADD_Clicked"/>
+            
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
