@@ -1,3 +1,6 @@
+# Before forking this repo (PLEASE READ!)
+All the images, videos, sounds, music and logos in this project are with illustrative purposes only, they cannot be used, adapted, copied or published without their creator's permission.
+
 # About HolidayCountdown
 What is HolidayCountdown? HolidayCountdown is a personal project mobile application which provides the ablility to create your own custom countdown timers, you are able to 
 customize existing timers by changing their name, background image/video and time. The dates of the countdown timers are updated automatically every time the target date passes.
