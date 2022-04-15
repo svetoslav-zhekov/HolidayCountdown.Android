@@ -1,7 +1,7 @@
-# Before forking this repo (PLEASE READ!)
+# 🚨 Before forking this repo (PLEASE READ!) 🚨
 All the images, videos, sounds, music and logos in this project are with illustrative purposes only, they cannot be used, adapted, copied or published without their creator's permission.
 
-# About HolidayCountdown
+# ℹ️ About HolidayCountdown ℹ️
 What is HolidayCountdown? HolidayCountdown is a personal project mobile application which provides the ablility to create your own custom countdown timers, you are able to 
 customize existing timers by changing their name, background image/video and time. The dates of the countdown timers are updated automatically every time the target date passes.
 
@@ -12,10 +12,10 @@ customize existing timers by changing their name, background image/video and tim
 
 
 
-# Languages Used
+# 📜 Languages Used 📜
 * C#
 
-# Frameworks/Libraries
+# 📚 Frameworks/Libraries 📚
 * [Json.NET](https://www.newtonsoft.com/json)
 * [Xamarin Community Toolkit](https://docs.microsoft.com/en-us/xamarin/community-toolkit/)
 
